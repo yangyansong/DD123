@@ -22,7 +22,15 @@ servspdInstaller.sh 为一键安装(无需修改mac地址)
     3.lic生成指定带宽: http://ip.com[:port]/regenspeeder/lic?mac=00:00:00:00:00:00&bandwidth=100M
     4.生成日期参数和带宽参数可同时使用(废话...),带宽不填默认100M
     5.shell包下载: http://ip.com[:port]/serverspeeder/servspdShell.tar.gz
-
+# 使用方法
+    1.在服务器上安装tomcat ubuntu为apt-get install tomcat7
+    2.将仓库里srcANDwar里的servspd.war放到tomcat里面webapps包中(默认tomcat7的webapps目录是/var/lib/tomcat7/webapps),最好重命名成ROOT,这样网址中不需要加项目名,tomcat端口最好为80,也可以使用nginx进行反向代理,
+    3.测试使用:ROOT http://您的服务器ip[:服务器端口]/
+    非ROOT: http://您的服务器IP[:服务器端口]/servspd/
+    4.如果显示一个 Hello World 字样就可以了
+    5.打开servspdInstaller.sh 修改HOST=http://ip.com[:port]为自己服务器ip和项目名 例如HOST=http://10.1.1.1:8080/servspd
+    6.额外:如果tomcat是80端口,且项目已经重命名成ROOT,则打开servspdInstaller.sh 修改HOSTADDR=[hostIP]为自己服务器ip 例如HOSTADDR=10.1.1.1
+    7.将servspdInstaller.sh传到服务器上,输入 bash servspdInstaller.sh 即可进行自动安装
 项目为java servlet项目,Eclipse Project<br>
 
 ### 需要自行部署eclipse项目,来重定向ss的定时lic检测,否则会因为无法更新lic而导致ss加速无效
