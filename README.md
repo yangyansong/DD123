@@ -41,6 +41,7 @@ servspdInstaller.sh 为一键安装(无需修改mac地址)
     5.sudo update-grub更新内核
     6.sudo reboot 重启服务器
     7.重启之后 再次使用uname -r则看到使用了3.13.0-29-generic内核,直接下载servspdInstaller.sh并配置好里面的地址,上传到到服务器,然后sudo bash servspdInstaller.sh进行安装
+    8.具体参考 http://bbs.tcp.hk/thread-84-1-1.html
 
 
 项目为java servlet项目,Eclipse Project<br>
