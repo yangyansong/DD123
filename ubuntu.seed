@@ -1,0 +1,71 @@
+#### Contents of the preconfiguration file (for xenial)
+# Localization
+d-i debian-installer/language string en
+d-i debian-installer/country string HK
+d-i debian-installer/locale string en_US.UTF-8
+# Keyboard selection.
+d-i console-setup/ask_detect boolean false
+d-i keyboard-configuration console-setup/detected note
+d-i keyboard-configuration/layoutcode string us
+d-i keyboard-configuration/model select Generic 105-key (Intl) PC
+d-i keyboard-configuration/xkb-keymap select us
+
+# Network configuration
+d-i netcfg/choose_interface select auto
+d-i netcfg/hostname string ubuntu
+d-i netcfg/wireless_wep string
+
+# Mirror settings (assume no proxy is required)
+d-i mirror/http/proxy string
+d-i mirror/http/mirror select archive.ubuntu.com
+
+# To create a normal user account.
+d-i passwd/user-fullname string abc
+d-i passwd/username string abc
+
+# default password is ubuntu
+d-i passwd/user-password-crypted password $6$B2Kq.uhkH1Enlj$1IMbJZY3S6cTlYzKEzoobgYs6PTnaAfvMO885dUmZz/SXacFihZLK8QDyPOBA/FpOdacRkZnwO06b9/XpO5E81
+d-i user-setup/allow-password-weak boolean true
+d-i user-setup/encrypt-home boolean false
+
+# Clock and time zone setup
+d-i clock-setup/utc boolean true
+d-i time/zone string Hong_Kong
+d-i clock-setup/ntp boolean true
+d-i clock-setup/ntp-server string stdtime.gov.hk
+
+# Partitioning
+d-i partman-auto/method string regular
+d-i partman-lvm/device_remove_lvm boolean true
+d-i partman-md/device_remove_md boolean true
+d-i partman-lvm/confirm boolean true
+d-i partman-lvm/confirm_nooverwrite boolean true
+d-i partman-auto/choose_recipe select atomic
+d-i partman/default_filesystem string ext4
+d-i partman-partitioning/confirm_write_new_label boolean true
+d-i partman/choose_partition select finish
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+d-i partman/mount_style select uuid
+
+# Package selection
+# below command has no d-i in it, it is not an error
+# remove this line alone allow selection of packages
+tasksel tasksel/first multiselect Basic Ubuntu server
+# the below packages will be installed even if you comment out the above line and choose nothing to install during package selection.
+d-i pkgsel/include string openssh-server
+d-i pkgsel/upgrade select none
+d-i pkgsel/update-policy select none
+
+# GRUB configuration, disable splash and quiet to reduce error in graphics drivers of virtual machines
+d-i debian-installer/quiet boolean false
+d-i debian-installer/splash boolean false
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/timeout string 10
+
+d-i finish-install/reboot_in_progress note
+d-i cdrom-detect/eject boolean false
+
+# Advanced options
+# I successfully pass .dircolors, .vimrc and .bash_aliases to the new systems. Assume these files are located in the same folder as the seed file
+# d-i preseed/late_command string cp -a /cdrom/preseed/.dircolors /target/home/ubuntu;cp -a /cdrom/preseed/.vimrc /target/home/ubuntu;cp -a /cdrom/preseed/.bash_aliases /target/home/ubuntu
