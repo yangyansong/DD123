@@ -17,7 +17,7 @@ d-i netcfg/wireless_wep string
 
 # Mirror settings (assume no proxy is required)
 d-i mirror/http/proxy string
-d-i mirror/http/mirror select archive.ubuntu.com
+d-i mirror/http/mirror select de.archive.ubuntu.com
 
 # Skip creation of a root account (normal user account will be able to
 # use sudo). The default is false; preseed this to true if you want to set
