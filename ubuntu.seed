@@ -37,8 +37,8 @@ d-i passwd/user-fullname string abc
 d-i passwd/username string abc
 
 # default password is ubuntu
-d-i passwd/user-password password paul
-d-i passwd/root-password-again password paul
+d-i passwd/user-password password test
+d-i passwd/root-password-again password test
 d-i user-setup/allow-password-weak boolean true
 d-i user-setup/encrypt-home boolean false
 
