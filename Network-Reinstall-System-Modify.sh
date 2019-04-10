@@ -85,7 +85,7 @@ then
 	echo -e "\033[33m You have chosen to install the latest Ubuntu_18.04 \033[0m"
 	echo -e "\n"
 	sleep 2s
-	wget --no-check-certificate -qO koiok.sh 'https://tech.cxthhhhh.com/tech-tools/Network-Reinstall-System-Modify/koiok.sh' && bash koiok.sh -u 18.04 -v 64 -a --mirror 'http://archive.ubuntu.com/ubuntu'
+	wget --no-check-certificate -qO koiok.sh 'https://github.com/dapao9999/123/raw/master/koiok.sh' && bash koiok.sh -u 18.04 -v 64 -a --mirror 'http://archive.ubuntu.com/ubuntu'
 fi
 
 if [ $1 = '-Ubuntu_16.04' ]
