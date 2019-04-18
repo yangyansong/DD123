@@ -61,7 +61,7 @@ then
 	echo -e "\033[33m You have chosen to install the latest Debian_9 \033[0m"
 	echo -e "\n"
 	sleep 2s
-	wget --no-check-certificate -qO koiok.sh 'https://tech.cxthhhhh.com/tech-tools/Network-Reinstall-System-Modify/koiok.sh' && bash koiok.sh -d 9 -v 64 -a --mirror 'http://deb.debian.org/debian'
+	wget --no-check-certificate -qO koiok.sh 'https://github.com/dapao9999/123/raw/master/koiok.sh' && bash koiok.sh -d 9 -v 64 -a --mirror 'http://deb.debian.org/debian'
 fi
 
 if [ $1 = '-Debian_8' ]
