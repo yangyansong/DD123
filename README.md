@@ -4,8 +4,7 @@
 pw=cxthhhhh.com
 
 
-wget https://github.com/dapao9999/123/raw/master/Network-Reinstall-System-Modify.sh
-
+wget https://github.com/yangyansong/DD123/blob/master/Network-Reinstall-System-Modify.sh
 
 bash ~/Network-Reinstall-System-Modify.sh -Ubuntu_18.04
 
